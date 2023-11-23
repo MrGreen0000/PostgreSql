@@ -1,0 +1,16 @@
+#Queries 
+
+SELECT first_name, last_name, gender, country_of_birth, date_of_birth, AGE(NOW(), date_of_birth) AS age FROM person;
+
+ ALTER TABLE person ADD CONSTRAINT unique_email_adress UNIQUE (email);
+
+
+ #Untils
+  \! cls
+  \i 'C:/dev/dyma/SQL/PostgreSql/person.sql'
+  \i 'C:/dev/dyma/SQL/PostgreSql/car.sql'
+  \i 'C:/dev/dyma/SQL/PostgreSql/person-car.sql'
+  \x  get in shape countryside or portrait
+
+#queries
+\copy (SELECT * FROM person LEFT JOIN car ON car.id = person.car_id) TO 'C:/dev/dyma/SQL/PostgreSql/' DELIMITER ',' CSV HEADER; Permission denied

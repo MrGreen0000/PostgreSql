@@ -1,0 +1,14 @@
+# dump database
+pg_dump --help
+pg_dump --clean --create --inserts --username=freecodecamp students > students.sql
+
+# rebuild database
+psql -U postgres < students.sql
+
+# Give you new file executabale permission
+chmod +x student_info.sh
+
+# Queries
+ALTER TABLE students ADD FOREIGN KEY(major_id) REFERENCES majors(major_id);
+ALTER TABLE courses ADD COLUMN course_id SERIAL PRIMARY KEY;
+ALTER TABLE majors_courses ADD PRIMARY KEY(major_id, course_id);
